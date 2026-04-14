@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4coders — Educação em Tecnologia</title>
+  <meta name="description" content="Formação prática em desenvolvimento de software. Training, bootcamps e mentoria para desenvolvedores.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="logo-4">4</span><span class="logo-coders">coders</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="#about" data-pt="Sobre" data-en="About">Sobre</a>
+        <a href="#programs" data-pt="Programas" data-en="Programs">Programas</a>
+        <a href="#method" data-pt="Método" data-en="Method">Método</a>
+        <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__tag" data-pt="Educação em Tecnologia" data-en="Tech Education">Educação em Tecnologia</p>
+        <h1 class="hero__title" data-pt="Formamos desenvolvedores que constroem o futuro" data-en="We train developers who build the future">Formamos desenvolvedores que constroem o futuro</h1>
+        <p class="hero__desc" data-pt="Bootcamps, mentoria e treinamentos práticos em desenvolvimento de software. Do fundamento à produção." data-en="Bootcamps, mentoring, and hands-on training in software development. From fundamentals to production.">Bootcamps, mentoria e treinamentos práticos em desenvolvimento de software. Do fundamento à produção.</p>
+        <div class="hero__actions">
+          <a href="#programs" class="btn btn--primary" data-pt="Ver Programas" data-en="View Programs">Ver Programas</a>
+          <a href="#contact" class="btn btn--outline" data-pt="Fale Conosco" data-en="Contact Us">Fale Conosco</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="code-block">
+          <div class="code-block__dots"><span></span><span></span><span></span></div>
+          <pre><code><span class="kw">defn</span> <span class="fn">grow</span> [<span class="arg">developer</span>]
+  (<span class="kw">->></span> developer
+    practice
+    mentor
+    ship
+    <span class="fn">repeat</span>))</code></pre>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat">
+        <span class="stat__number">500+</span>
+        <span class="stat__label" data-pt="Devs formados" data-en="Devs trained">Devs formados</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">8</span>
+        <span class="stat__label" data-pt="Anos de experiência" data-en="Years of experience">Anos de experiência</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">95%</span>
+        <span class="stat__label" data-pt="Taxa de empregabilidade" data-en="Employment rate">Taxa de empregabilidade</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">4.9</span>
+        <span class="stat__label" data-pt="Avaliação média" data-en="Average rating">Avaliação média</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <div class="section-tag" data-pt="Quem somos" data-en="About us">Quem somos</div>
+      <h2 class="section-title" data-pt="Tecnologia se aprende fazendo" data-en="Technology is learned by doing">Tecnologia se aprende fazendo</h2>
+      <div class="about__grid">
+        <div class="about__text">
+          <p data-pt="A 4coders nasceu da convicção de que a melhor forma de aprender programação é construindo projetos reais, com acompanhamento de quem já passou pelo mesmo caminho." data-en="4coders was born from the conviction that the best way to learn programming is by building real projects, guided by those who have walked the same path.">A 4coders nasceu da convicção de que a melhor forma de aprender programação é construindo projetos reais, com acompanhamento de quem já passou pelo mesmo caminho.</p>
+          <p data-pt="Nossos instrutores são profissionais atuantes no mercado, com experiência em startups, fintechs e grandes empresas. Cada programa é desenhado para levar o aluno do conceito ao deploy." data-en="Our instructors are active professionals with experience in startups, fintechs, and major companies. Each program is designed to take students from concept to deployment.">Nossos instrutores são profissionais atuantes no mercado, com experiência em startups, fintechs e grandes empresas. Cada programa é desenhado para levar o aluno do conceito ao deploy.</p>
+        </div>
+        <div class="about__values">
+          <div class="value-card">
+            <div class="value-card__icon">⚡</div>
+            <h3 data-pt="Prática primeiro" data-en="Practice first">Prática primeiro</h3>
+            <p data-pt="Projetos reais desde o primeiro dia" data-en="Real projects from day one">Projetos reais desde o primeiro dia</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">🎯</div>
+            <h3 data-pt="Foco no mercado" data-en="Market focused">Foco no mercado</h3>
+            <p data-pt="Stack e práticas usadas na indústria" data-en="Industry-standard stack and practices">Stack e práticas usadas na indústria</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">🤝</div>
+            <h3 data-pt="Mentoria contínua" data-en="Ongoing mentoring">Mentoria contínua</h3>
+            <p data-pt="Acompanhamento individual e em grupo" data-en="Individual and group guidance">Acompanhamento individual e em grupo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section class="programs" id="programs">
+    <div class="container">
+      <div class="section-tag" data-pt="Programas" data-en="Programs">Programas</div>
+      <h2 class="section-title" data-pt="Escolha seu caminho" data-en="Choose your path">Escolha seu caminho</h2>
+      <div class="programs__grid">
+        <div class="program-card">
+          <div class="program-card__badge" data-pt="Fundamentos" data-en="Fundamentals">Fundamentos</div>
+          <h3 class="program-card__title" data-pt="Bootcamp Full-Stack" data-en="Full-Stack Bootcamp">Bootcamp Full-Stack</h3>
+          <p class="program-card__desc" data-pt="Do zero ao deploy. HTML, CSS, JavaScript, React, Node.js, banco de dados e infraestrutura." data-en="From zero to deploy. HTML, CSS, JavaScript, React, Node.js, databases, and infrastructure.">Do zero ao deploy. HTML, CSS, JavaScript, React, Node.js, banco de dados e infraestrutura.</p>
+          <ul class="program-card__features">
+            <li data-pt="16 semanas intensivas" data-en="16 intensive weeks">16 semanas intensivas</li>
+            <li data-pt="Projeto final em equipe" data-en="Team capstone project">Projeto final em equipe</li>
+            <li data-pt="Suporte pós-bootcamp" data-en="Post-bootcamp support">Suporte pós-bootcamp</li>
+          </ul>
+        </div>
+        <div class="program-card program-card--featured">
+          <div class="program-card__badge" data-pt="Avançado" data-en="Advanced">Avançado</div>
+          <h3 class="program-card__title" data-pt="Engenharia de Software" data-en="Software Engineering">Engenharia de Software</h3>
+          <p class="program-card__desc" data-pt="Arquitetura, design patterns, CI/CD, observabilidade e práticas de equipes de alta performance." data-en="Architecture, design patterns, CI/CD, observability, and high-performance team practices.">Arquitetura, design patterns, CI/CD, observabilidade e práticas de equipes de alta performance.</p>
+          <ul class="program-card__features">
+            <li data-pt="12 semanas de profundidade" data-en="12 weeks of depth">12 semanas de profundidade</li>
+            <li data-pt="Code review com seniors" data-en="Code review with seniors">Code review com seniors</li>
+            <li data-pt="Certificação" data-en="Certification">Certificação</li>
+          </ul>
+        </div>
+        <div class="program-card">
+          <div class="program-card__badge" data-pt="Especialização" data-en="Specialization">Especialização</div>
+          <h3 class="program-card__title" data-pt="Clojure & Sistemas Funcionais" data-en="Clojure & Functional Systems">Clojure & Sistemas Funcionais</h3>
+          <p class="program-card__desc" data-pt="Programação funcional, Datomic, sistemas distribuídos e desenvolvimento orientado a dados." data-en="Functional programming, Datomic, distributed systems, and data-oriented development.">Programação funcional, Datomic, sistemas distribuídos e desenvolvimento orientado a dados.</p>
+          <ul class="program-card__features">
+            <li data-pt="8 semanas especializadas" data-en="8 specialized weeks">8 semanas especializadas</li>
+            <li data-pt="Projetos com dados reais" data-en="Projects with real data">Projetos com dados reais</li>
+            <li data-pt="Mentoria 1:1" data-en="1:1 Mentoring">Mentoria 1:1</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method -->
+  <section class="method" id="method">
+    <div class="container">
+      <div class="section-tag" data-pt="Método" data-en="Method">Método</div>
+      <h2 class="section-title" data-pt="Como funciona" data-en="How it works">Como funciona</h2>
+      <div class="method__steps">
+        <div class="step">
+          <div class="step__number">01</div>
+          <h3 data-pt="Fundamentos sólidos" data-en="Solid fundamentals">Fundamentos sólidos</h3>
+          <p data-pt="Construa uma base técnica forte com conceitos que não mudam com frameworks." data-en="Build a strong technical foundation with concepts that outlast frameworks.">Construa uma base técnica forte com conceitos que não mudam com frameworks.</p>
+        </div>
+        <div class="step">
+          <div class="step__number">02</div>
+          <h3 data-pt="Projetos práticos" data-en="Hands-on projects">Projetos práticos</h3>
+          <p data-pt="Aplique cada conceito em projetos que simulam desafios reais do mercado." data-en="Apply each concept in projects that simulate real market challenges.">Aplique cada conceito em projetos que simulam desafios reais do mercado.</p>
+        </div>
+        <div class="step">
+          <div class="step__number">03</div>
+          <h3 data-pt="Mentoria e feedback" data-en="Mentoring & feedback">Mentoria e feedback</h3>
+          <p data-pt="Receba orientação personalizada de desenvolvedores experientes." data-en="Receive personalized guidance from experienced developers.">Receba orientação personalizada de desenvolvedores experientes.</p>
+        </div>
+        <div class="step">
+          <div class="step__number">04</div>
+          <h3 data-pt="Deploy e portfólio" data-en="Deploy & portfolio">Deploy e portfólio</h3>
+          <p data-pt="Coloque projetos em produção e construa um portfólio profissional." data-en="Ship projects to production and build a professional portfolio.">Coloque projetos em produção e construa um portfólio profissional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container contact__inner">
+      <div class="section-tag" data-pt="Contato" data-en="Contact">Contato</div>
+      <h2 class="section-title" data-pt="Vamos conversar" data-en="Let's talk">Vamos conversar</h2>
+      <p class="contact__desc" data-pt="Interessado em nossos programas? Entre em contato e vamos encontrar o melhor caminho para sua carreira." data-en="Interested in our programs? Get in touch and let's find the best path for your career.">Interessado em nossos programas? Entre em contato e vamos encontrar o melhor caminho para sua carreira.</p>
+      <div class="contact__grid">
+        <a href="mailto:contato@4coders.com.br" class="contact-card">
+          <div class="contact-card__icon">✉️</div>
+          <span>contato@4coders.com.br</span>
+        </a>
+        <a href="https://github.com/4coders" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card__icon">💻</div>
+          <span>github.com/4coders</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="nav__logo">
+          <span class="logo-4">4</span><span class="logo-coders">coders</span>
+        </a>
+        <p data-pt="Formando desenvolvedores desde 2017." data-en="Training developers since 2017.">Formando desenvolvedores desde 2017.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#about" data-pt="Sobre" data-en="About">Sobre</a>
+        <a href="#programs" data-pt="Programas" data-en="Programs">Programas</a>
+        <a href="#method" data-pt="Método" data-en="Method">Método</a>
+        <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
+      </div>
+      <p class="footer__copy">&copy; 2025 4coders. <span data-pt="Todos os direitos reservados." data-en="All rights reserved.">Todos os direitos reservados.</span></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
