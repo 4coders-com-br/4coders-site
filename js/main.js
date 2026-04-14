@@ -14,6 +14,9 @@
     document.querySelectorAll('[data-pt][data-en]').forEach(function (el) {
       el.textContent = el.getAttribute('data-' + lang);
     });
+
+    // Emit language change event for other components (like trader docs)
+    window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: lang } }));
   }
 
   toggle.addEventListener('click', function () {
