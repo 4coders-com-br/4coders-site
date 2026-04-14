@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4coders — Educação em Tecnologia</title>
-  <meta name="description" content="Formação prática em desenvolvimento de software. Training, bootcamps e mentoria para desenvolvedores.">
+  <title>4coders — Software Studio</title>
+  <meta name="description" content="Construímos produtos de software com engenharia de qualidade. We build software products with quality engineering.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +21,9 @@
       </a>
       <div class="nav__links" id="navLinks">
         <a href="#about" data-pt="Sobre" data-en="About">Sobre</a>
-        <a href="#programs" data-pt="Programas" data-en="Programs">Programas</a>
-        <a href="#method" data-pt="Método" data-en="Method">Método</a>
+        <a href="#products" data-pt="Produtos" data-en="Products">Produtos</a>
+        <a href="#stack" data-pt="Stack" data-en="Stack">Stack</a>
+        <a href="#bootcamp" data-pt="Bootcamp" data-en="Bootcamp">Bootcamp</a>
         <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
         <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
       </div>
@@ -36,147 +37,140 @@
   <header class="hero">
     <div class="container hero__inner">
       <div class="hero__content">
-        <p class="hero__tag" data-pt="Educação em Tecnologia" data-en="Tech Education">Educação em Tecnologia</p>
-        <h1 class="hero__title" data-pt="Formamos desenvolvedores que constroem o futuro" data-en="We train developers who build the future">Formamos desenvolvedores que constroem o futuro</h1>
-        <p class="hero__desc" data-pt="Bootcamps, mentoria e treinamentos práticos em desenvolvimento de software. Do fundamento à produção." data-en="Bootcamps, mentoring, and hands-on training in software development. From fundamentals to production.">Bootcamps, mentoria e treinamentos práticos em desenvolvimento de software. Do fundamento à produção.</p>
+        <p class="hero__tag" data-pt="Software Studio" data-en="Software Studio">Software Studio</p>
+        <h1 class="hero__title" data-pt="Construímos produtos de software que funcionam" data-en="We build software products that work">Construímos produtos de software que funcionam</h1>
+        <p class="hero__desc" data-pt="Engenharia sólida, arquitetura funcional e foco em entregar valor real. Do conceito à produção." data-en="Solid engineering, functional architecture, and focus on delivering real value. From concept to production.">Engenharia sólida, arquitetura funcional e foco em entregar valor real. Do conceito à produção.</p>
         <div class="hero__actions">
-          <a href="#programs" class="btn btn--primary" data-pt="Ver Programas" data-en="View Programs">Ver Programas</a>
+          <a href="#products" class="btn btn--primary" data-pt="Nossos Produtos" data-en="Our Products">Nossos Produtos</a>
           <a href="#contact" class="btn btn--outline" data-pt="Fale Conosco" data-en="Contact Us">Fale Conosco</a>
         </div>
       </div>
       <div class="hero__visual">
         <div class="code-block">
           <div class="code-block__dots"><span></span><span></span><span></span></div>
-          <pre><code><span class="kw">defn</span> <span class="fn">grow</span> [<span class="arg">developer</span>]
-  (<span class="kw">->></span> developer
-    practice
-    mentor
+          <pre><code>(<span class="kw">defn</span> <span class="fn">build</span> [<span class="arg">idea</span>]
+  (<span class="kw">->></span> idea
+    design
+    engineer
     ship
-    <span class="fn">repeat</span>))</code></pre>
+    <span class="fn">iterate</span>))</code></pre>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Stats -->
-  <section class="stats">
-    <div class="container stats__grid">
-      <div class="stat">
-        <span class="stat__number">500+</span>
-        <span class="stat__label" data-pt="Devs formados" data-en="Devs trained">Devs formados</span>
-      </div>
-      <div class="stat">
-        <span class="stat__number">8</span>
-        <span class="stat__label" data-pt="Anos de experiência" data-en="Years of experience">Anos de experiência</span>
-      </div>
-      <div class="stat">
-        <span class="stat__number">95%</span>
-        <span class="stat__label" data-pt="Taxa de empregabilidade" data-en="Employment rate">Taxa de empregabilidade</span>
-      </div>
-      <div class="stat">
-        <span class="stat__number">4.9</span>
-        <span class="stat__label" data-pt="Avaliação média" data-en="Average rating">Avaliação média</span>
-      </div>
-    </div>
-  </section>
-
   <!-- About -->
   <section class="about" id="about">
     <div class="container about__inner">
       <div class="section-tag" data-pt="Quem somos" data-en="About us">Quem somos</div>
-      <h2 class="section-title" data-pt="Tecnologia se aprende fazendo" data-en="Technology is learned by doing">Tecnologia se aprende fazendo</h2>
+      <h2 class="section-title" data-pt="Engenharia com propósito" data-en="Engineering with purpose">Engenharia com propósito</h2>
       <div class="about__grid">
         <div class="about__text">
-          <p data-pt="A 4coders nasceu da convicção de que a melhor forma de aprender programação é construindo projetos reais, com acompanhamento de quem já passou pelo mesmo caminho." data-en="4coders was born from the conviction that the best way to learn programming is by building real projects, guided by those who have walked the same path.">A 4coders nasceu da convicção de que a melhor forma de aprender programação é construindo projetos reais, com acompanhamento de quem já passou pelo mesmo caminho.</p>
-          <p data-pt="Nossos instrutores são profissionais atuantes no mercado, com experiência em startups, fintechs e grandes empresas. Cada programa é desenhado para levar o aluno do conceito ao deploy." data-en="Our instructors are active professionals with experience in startups, fintechs, and major companies. Each program is designed to take students from concept to deployment.">Nossos instrutores são profissionais atuantes no mercado, com experiência em startups, fintechs e grandes empresas. Cada programa é desenhado para levar o aluno do conceito ao deploy.</p>
+          <p data-pt="A 4coders é um estúdio de software focado em construir produtos próprios com arquitetura robusta e engenharia de qualidade. Usamos programação funcional, sistemas distribuídos e práticas modernas para criar soluções que escalam." data-en="4coders is a software studio focused on building our own products with robust architecture and quality engineering. We use functional programming, distributed systems, and modern practices to create solutions that scale.">A 4coders é um estúdio de software focado em construir produtos próprios com arquitetura robusta e engenharia de qualidade. Usamos programação funcional, sistemas distribuídos e práticas modernas para criar soluções que escalam.</p>
+          <p data-pt="Acreditamos que software bem feito começa com fundamentos sólidos — código limpo, testes rigorosos e decisões técnicas conscientes." data-en="We believe great software starts with solid fundamentals — clean code, rigorous testing, and conscious technical decisions.">Acreditamos que software bem feito começa com fundamentos sólidos — código limpo, testes rigorosos e decisões técnicas conscientes.</p>
         </div>
         <div class="about__values">
           <div class="value-card">
             <div class="value-card__icon">⚡</div>
-            <h3 data-pt="Prática primeiro" data-en="Practice first">Prática primeiro</h3>
-            <p data-pt="Projetos reais desde o primeiro dia" data-en="Real projects from day one">Projetos reais desde o primeiro dia</p>
+            <h3 data-pt="Produtos próprios" data-en="Own products">Produtos próprios</h3>
+            <p data-pt="Construímos e operamos nossos próprios produtos" data-en="We build and operate our own products">Construímos e operamos nossos próprios produtos</p>
           </div>
           <div class="value-card">
             <div class="value-card__icon">🎯</div>
-            <h3 data-pt="Foco no mercado" data-en="Market focused">Foco no mercado</h3>
-            <p data-pt="Stack e práticas usadas na indústria" data-en="Industry-standard stack and practices">Stack e práticas usadas na indústria</p>
+            <h3 data-pt="Engenharia funcional" data-en="Functional engineering">Engenharia funcional</h3>
+            <p data-pt="Clojure, sistemas imutáveis e dados como fundação" data-en="Clojure, immutable systems, and data as foundation">Clojure, sistemas imutáveis e dados como fundação</p>
           </div>
           <div class="value-card">
-            <div class="value-card__icon">🤝</div>
-            <h3 data-pt="Mentoria contínua" data-en="Ongoing mentoring">Mentoria contínua</h3>
-            <p data-pt="Acompanhamento individual e em grupo" data-en="Individual and group guidance">Acompanhamento individual e em grupo</p>
+            <div class="value-card__icon">🚀</div>
+            <h3 data-pt="Do conceito ao deploy" data-en="From concept to deploy">Do conceito ao deploy</h3>
+            <p data-pt="Full-stack: design, backend, frontend e infraestrutura" data-en="Full-stack: design, backend, frontend, and infrastructure">Full-stack: design, backend, frontend e infraestrutura</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Programs -->
-  <section class="programs" id="programs">
+  <!-- Products -->
+  <section class="programs" id="products">
     <div class="container">
-      <div class="section-tag" data-pt="Programas" data-en="Programs">Programas</div>
-      <h2 class="section-title" data-pt="Escolha seu caminho" data-en="Choose your path">Escolha seu caminho</h2>
+      <div class="section-tag" data-pt="Produtos" data-en="Products">Produtos</div>
+      <h2 class="section-title" data-pt="O que construímos" data-en="What we build">O que construímos</h2>
       <div class="programs__grid">
-        <div class="program-card">
-          <div class="program-card__badge" data-pt="Fundamentos" data-en="Fundamentals">Fundamentos</div>
-          <h3 class="program-card__title" data-pt="Bootcamp Full-Stack" data-en="Full-Stack Bootcamp">Bootcamp Full-Stack</h3>
-          <p class="program-card__desc" data-pt="Do zero ao deploy. HTML, CSS, JavaScript, React, Node.js, banco de dados e infraestrutura." data-en="From zero to deploy. HTML, CSS, JavaScript, React, Node.js, databases, and infrastructure.">Do zero ao deploy. HTML, CSS, JavaScript, React, Node.js, banco de dados e infraestrutura.</p>
-          <ul class="program-card__features">
-            <li data-pt="16 semanas intensivas" data-en="16 intensive weeks">16 semanas intensivas</li>
-            <li data-pt="Projeto final em equipe" data-en="Team capstone project">Projeto final em equipe</li>
-            <li data-pt="Suporte pós-bootcamp" data-en="Post-bootcamp support">Suporte pós-bootcamp</li>
-          </ul>
-        </div>
         <div class="program-card program-card--featured">
-          <div class="program-card__badge" data-pt="Avançado" data-en="Advanced">Avançado</div>
-          <h3 class="program-card__title" data-pt="Engenharia de Software" data-en="Software Engineering">Engenharia de Software</h3>
-          <p class="program-card__desc" data-pt="Arquitetura, design patterns, CI/CD, observabilidade e práticas de equipes de alta performance." data-en="Architecture, design patterns, CI/CD, observability, and high-performance team practices.">Arquitetura, design patterns, CI/CD, observabilidade e práticas de equipes de alta performance.</p>
+          <div class="program-card__badge" data-pt="Em Produção" data-en="In Production">Em Produção</div>
+          <h3 class="program-card__title">Little Trader</h3>
+          <p class="program-card__desc" data-pt="Sistema de trading algorítmico com estratégias baseadas em Renko, backtesting e execução automatizada. Arquitetura funcional com Clojure, Datomic e processamento de eventos em tempo real." data-en="Algorithmic trading system with Renko-based strategies, backtesting, and automated execution. Functional architecture with Clojure, Datomic, and real-time event processing.">Sistema de trading algorítmico com estratégias baseadas em Renko, backtesting e execução automatizada. Arquitetura funcional com Clojure, Datomic e processamento de eventos em tempo real.</p>
           <ul class="program-card__features">
-            <li data-pt="12 semanas de profundidade" data-en="12 weeks of depth">12 semanas de profundidade</li>
-            <li data-pt="Code review com seniors" data-en="Code review with seniors">Code review com seniors</li>
-            <li data-pt="Certificação" data-en="Certification">Certificação</li>
+            <li data-pt="Clojure + Fulcro + Datomic" data-en="Clojure + Fulcro + Datomic">Clojure + Fulcro + Datomic</li>
+            <li data-pt="Clara Rules para detecção de sinais" data-en="Clara Rules for signal detection">Clara Rules para detecção de sinais</li>
+            <li data-pt="Backtest, paper trading e produção" data-en="Backtest, paper trading, and production">Backtest, paper trading e produção</li>
+            <li data-pt="Integração com Deribit e dados de mercado" data-en="Deribit integration and market data">Integração com Deribit e dados de mercado</li>
           </ul>
         </div>
         <div class="program-card">
-          <div class="program-card__badge" data-pt="Especialização" data-en="Specialization">Especialização</div>
-          <h3 class="program-card__title" data-pt="Clojure & Sistemas Funcionais" data-en="Clojure & Functional Systems">Clojure & Sistemas Funcionais</h3>
-          <p class="program-card__desc" data-pt="Programação funcional, Datomic, sistemas distribuídos e desenvolvimento orientado a dados." data-en="Functional programming, Datomic, distributed systems, and data-oriented development.">Programação funcional, Datomic, sistemas distribuídos e desenvolvimento orientado a dados.</p>
+          <div class="program-card__badge" data-pt="Em Breve" data-en="Coming Soon">Em Breve</div>
+          <h3 class="program-card__title" data-pt="Atendimento ao Cliente" data-en="Customer Service">Atendimento ao Cliente</h3>
+          <p class="program-card__desc" data-pt="Plataforma inteligente para gestão de atendimento ao cliente. Automação de fluxos, integração multicanal e análise de dados para melhorar a experiência do consumidor." data-en="Intelligent customer service management platform. Workflow automation, multichannel integration, and data analytics to improve the consumer experience.">Plataforma inteligente para gestão de atendimento ao cliente. Automação de fluxos, integração multicanal e análise de dados para melhorar a experiência do consumidor.</p>
           <ul class="program-card__features">
-            <li data-pt="8 semanas especializadas" data-en="8 specialized weeks">8 semanas especializadas</li>
-            <li data-pt="Projetos com dados reais" data-en="Projects with real data">Projetos com dados reais</li>
-            <li data-pt="Mentoria 1:1" data-en="1:1 Mentoring">Mentoria 1:1</li>
+            <li data-pt="Automação de fluxos de atendimento" data-en="Service workflow automation">Automação de fluxos de atendimento</li>
+            <li data-pt="Integração multicanal" data-en="Multichannel integration">Integração multicanal</li>
+            <li data-pt="Análise e métricas em tempo real" data-en="Real-time analytics and metrics">Análise e métricas em tempo real</li>
+          </ul>
+        </div>
+        <div class="program-card">
+          <div class="program-card__badge" data-pt="Em Breve" data-en="Coming Soon">Em Breve</div>
+          <h3 class="program-card__title" data-pt="Varejo & ERP" data-en="Retail & ERP">Varejo & ERP</h3>
+          <p class="program-card__desc" data-pt="Sistema integrado para gestão de varejo e operações empresariais. Controle de estoque, vendas, financeiro e logística em uma plataforma unificada orientada a dados." data-en="Integrated system for retail management and business operations. Inventory control, sales, finance, and logistics in a unified data-oriented platform.">Sistema integrado para gestão de varejo e operações empresariais. Controle de estoque, vendas, financeiro e logística em uma plataforma unificada orientada a dados.</p>
+          <ul class="program-card__features">
+            <li data-pt="Gestão de estoque e vendas" data-en="Inventory and sales management">Gestão de estoque e vendas</li>
+            <li data-pt="Financeiro e logística integrados" data-en="Integrated finance and logistics">Financeiro e logística integrados</li>
+            <li data-pt="Arquitetura orientada a dados" data-en="Data-oriented architecture">Arquitetura orientada a dados</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Method -->
-  <section class="method" id="method">
+  <!-- Stack -->
+  <section class="method" id="stack">
     <div class="container">
-      <div class="section-tag" data-pt="Método" data-en="Method">Método</div>
-      <h2 class="section-title" data-pt="Como funciona" data-en="How it works">Como funciona</h2>
+      <div class="section-tag" data-pt="Stack" data-en="Stack">Stack</div>
+      <h2 class="section-title" data-pt="Nossa tecnologia" data-en="Our technology">Nossa tecnologia</h2>
       <div class="method__steps">
         <div class="step">
           <div class="step__number">01</div>
-          <h3 data-pt="Fundamentos sólidos" data-en="Solid fundamentals">Fundamentos sólidos</h3>
-          <p data-pt="Construa uma base técnica forte com conceitos que não mudam com frameworks." data-en="Build a strong technical foundation with concepts that outlast frameworks.">Construa uma base técnica forte com conceitos que não mudam com frameworks.</p>
+          <h3>Clojure</h3>
+          <p data-pt="Programação funcional, imutabilidade e REPL-driven development como base de tudo que construímos." data-en="Functional programming, immutability, and REPL-driven development as the foundation of everything we build.">Programação funcional, imutabilidade e REPL-driven development como base de tudo que construímos.</p>
         </div>
         <div class="step">
           <div class="step__number">02</div>
-          <h3 data-pt="Projetos práticos" data-en="Hands-on projects">Projetos práticos</h3>
-          <p data-pt="Aplique cada conceito em projetos que simulam desafios reais do mercado." data-en="Apply each concept in projects that simulate real market challenges.">Aplique cada conceito em projetos que simulam desafios reais do mercado.</p>
+          <h3>Datomic</h3>
+          <p data-pt="Banco de dados imutável com histórico completo. Perfeito para sistemas onde cada mudança importa." data-en="Immutable database with complete history. Perfect for systems where every change matters.">Banco de dados imutável com histórico completo. Perfeito para sistemas onde cada mudança importa.</p>
         </div>
         <div class="step">
           <div class="step__number">03</div>
-          <h3 data-pt="Mentoria e feedback" data-en="Mentoring & feedback">Mentoria e feedback</h3>
-          <p data-pt="Receba orientação personalizada de desenvolvedores experientes." data-en="Receive personalized guidance from experienced developers.">Receba orientação personalizada de desenvolvedores experientes.</p>
+          <h3>Fulcro</h3>
+          <p data-pt="Framework full-stack para ClojureScript com graph queries e normalização automática de estado." data-en="Full-stack ClojureScript framework with graph queries and automatic state normalization.">Framework full-stack para ClojureScript com graph queries e normalização automática de estado.</p>
         </div>
         <div class="step">
           <div class="step__number">04</div>
-          <h3 data-pt="Deploy e portfólio" data-en="Deploy & portfolio">Deploy e portfólio</h3>
-          <p data-pt="Coloque projetos em produção e construa um portfólio profissional." data-en="Ship projects to production and build a professional portfolio.">Coloque projetos em produção e construa um portfólio profissional.</p>
+          <h3>Clara Rules</h3>
+          <p data-pt="Motor de regras para detecção de padrões e tomada de decisão em tempo real." data-en="Rules engine for pattern detection and real-time decision making.">Motor de regras para detecção de padrões e tomada de decisão em tempo real.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootcamp -->
+  <section class="bootcamp" id="bootcamp">
+    <div class="container bootcamp__inner">
+      <div class="section-tag" data-pt="Educação" data-en="Education">Educação</div>
+      <h2 class="section-title" data-pt="Bootcamp 4coders" data-en="4coders Bootcamp">Bootcamp 4coders</h2>
+      <div class="bootcamp__content">
+        <div class="bootcamp__badge-paused" data-pt="Em pausa" data-en="On pause">Em pausa</div>
+        <p data-pt="Nosso programa de formação em desenvolvimento de software está temporariamente em pausa enquanto focamos nos nossos produtos. O bootcamp combina fundamentos sólidos com projetos práticos e mentoria de profissionais atuantes." data-en="Our software development training program is temporarily on pause while we focus on our products. The bootcamp combines solid fundamentals with hands-on projects and mentoring from active professionals.">Nosso programa de formação em desenvolvimento de software está temporariamente em pausa enquanto focamos nos nossos produtos. O bootcamp combina fundamentos sólidos com projetos práticos e mentoria de profissionais atuantes.</p>
+        <p data-pt="Cadastre seu e-mail para ser notificado quando as próximas turmas abrirem." data-en="Sign up to be notified when the next cohorts open.">Cadastre seu e-mail para ser notificado quando as próximas turmas abrirem.</p>
+        <a href="mailto:contato@4coders.com.br?subject=Bootcamp%20-%20Lista%20de%20espera" class="btn btn--outline" data-pt="Entrar na lista de espera" data-en="Join the waitlist">Entrar na lista de espera</a>
       </div>
     </div>
   </section>
@@ -186,15 +180,15 @@
     <div class="container contact__inner">
       <div class="section-tag" data-pt="Contato" data-en="Contact">Contato</div>
       <h2 class="section-title" data-pt="Vamos conversar" data-en="Let's talk">Vamos conversar</h2>
-      <p class="contact__desc" data-pt="Interessado em nossos programas? Entre em contato e vamos encontrar o melhor caminho para sua carreira." data-en="Interested in our programs? Get in touch and let's find the best path for your career.">Interessado em nossos programas? Entre em contato e vamos encontrar o melhor caminho para sua carreira.</p>
+      <p class="contact__desc" data-pt="Quer saber mais sobre nossos produtos ou colaborar? Entre em contato." data-en="Want to learn more about our products or collaborate? Get in touch.">Quer saber mais sobre nossos produtos ou colaborar? Entre em contato.</p>
       <div class="contact__grid">
         <a href="mailto:contato@4coders.com.br" class="contact-card">
           <div class="contact-card__icon">✉️</div>
           <span>contato@4coders.com.br</span>
         </a>
-        <a href="https://github.com/4coders" class="contact-card" target="_blank" rel="noopener">
+        <a href="https://github.com/4coders-com-br" class="contact-card" target="_blank" rel="noopener">
           <div class="contact-card__icon">💻</div>
-          <span>github.com/4coders</span>
+          <span>github.com/4coders-com-br</span>
         </a>
       </div>
     </div>
@@ -207,12 +201,13 @@
         <a href="#" class="nav__logo">
           <span class="logo-4">4</span><span class="logo-coders">coders</span>
         </a>
-        <p data-pt="Formando desenvolvedores desde 2017." data-en="Training developers since 2017.">Formando desenvolvedores desde 2017.</p>
+        <p data-pt="Engenharia de software desde 2017." data-en="Software engineering since 2017.">Engenharia de software desde 2017.</p>
       </div>
       <div class="footer__links">
         <a href="#about" data-pt="Sobre" data-en="About">Sobre</a>
-        <a href="#programs" data-pt="Programas" data-en="Programs">Programas</a>
-        <a href="#method" data-pt="Método" data-en="Method">Método</a>
+        <a href="#products" data-pt="Produtos" data-en="Products">Produtos</a>
+        <a href="#stack" data-pt="Stack" data-en="Stack">Stack</a>
+        <a href="#bootcamp" data-pt="Bootcamp" data-en="Bootcamp">Bootcamp</a>
         <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
       </div>
       <p class="footer__copy">&copy; 2025 4coders. <span data-pt="Todos os direitos reservados." data-en="All rights reserved.">Todos os direitos reservados.</span></p>

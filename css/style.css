@@ -547,3 +547,42 @@ img { max-width: 100%; display: block; }
   .footer__inner { flex-direction: column; text-align: center; }
   .footer__links { justify-content: center; }
 }
+
+/* === Bootcamp (paused) === */
+.bootcamp {
+  padding: 80px 0;
+}
+
+.bootcamp__inner {
+  text-align: center;
+}
+
+.bootcamp__content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bootcamp__badge-paused {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.bootcamp__content p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.bootcamp__content .btn {
+  margin-top: 8px;
+}
