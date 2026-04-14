@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Little Trader — Trading System | 4coders</title>
-  <meta name="description" content="Little Trader: An advanced trading system built with Clojure, Fulcro, and Datomic. Full documentation and learning resources.">
+  <title>Little Trader — The Architecture of Edge | 4coders</title>
+  <meta name="description" content="Little Trader: A functional trading system where immutable data meets market chaos. Clojure, Pulsar, Datomic, and a local AI that never forgets.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/trader.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"></script>
@@ -26,9 +26,7 @@
       <div class="nav__links" id="navLinks">
         <a href="index.html#about" data-pt="Sobre" data-en="About">Sobre</a>
         <a href="index.html#stack" data-pt="Stack" data-en="Stack">Stack</a>
-        <a href="trader.html" class="nav-link--active" data-pt="Little Trader" data-en="Little Trader">
-          📈 Little Trader
-        </a>
+        <a href="trader.html" class="nav-link--active" data-pt="Little Trader" data-en="Little Trader">Little Trader</a>
         <a href="index.html#contact" data-pt="Contato" data-en="Contact">Contato</a>
         <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
       </div>
@@ -38,30 +36,386 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="trader-hero">
-    <div class="container trader-hero__inner">
-      <div class="trader-hero__content">
-        <p class="trader-hero__tag" data-pt="Sistema de Trading Avançado" data-en="Advanced Trading System">Sistema de Trading Avançado</p>
-        <h1 class="trader-hero__title" data-pt="Little Trader" data-en="Little Trader">📈 Little Trader</h1>
-        <p class="trader-hero__desc" data-pt="Um sistema de trading completo construído com Clojure, Fulcro e Datomic. Suporta análise de padrões Renko, execução em tempo real e backtesting em larga escala." data-en="A complete trading system built with Clojure, Fulcro, and Datomic. Supports Renko pattern analysis, real-time execution, and large-scale backtesting.">Um sistema de trading completo construído com Clojure, Fulcro e Datomic. Suporta análise de padrões Renko, execução em tempo real e backtesting em larga escala.</p>
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- HERO: The Thesis                                               -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <header class="lt-hero">
+    <div class="container lt-hero__inner">
+      <div class="lt-hero__content">
+        <p class="lt-hero__tag">v0.02</p>
+        <h1 class="lt-hero__title"
+            data-pt="Mercados são dados.<br>Dados são imutáveis.<br>Vantagem é arquitetura."
+            data-en="Markets are data.<br>Data is immutable.<br>Edge is architecture.">
+          Mercados são dados.<br>Dados são imutáveis.<br>Vantagem é arquitetura.
+        </h1>
+        <p class="lt-hero__subtitle"
+           data-pt="Little Trader não é um app de trading. É um sistema funcional onde cada tick, cada brick, cada decisão existe como um fato — nunca sobrescrito, sempre auditável, perpetuamente composto."
+           data-en="Little Trader is not a trading app. It is a functional system where every tick, every brick, every decision exists as a fact — never overwritten, always auditable, perpetually composable.">
+          Little Trader não é um app de trading. É um sistema funcional onde cada tick, cada brick, cada decisão existe como um fato — nunca sobrescrito, sempre auditável, perpetuamente composto.
+        </p>
+      </div>
+      <div class="lt-hero__visual">
+        <div class="code-block">
+          <div class="code-block__dots"><span></span><span></span><span></span></div>
+<pre><code><span class="comment">;; the market speaks in ticks</span>
+<span class="comment">;; we listen in immutable facts</span>
+(<span class="kw">defn</span> <span class="fn">edge</span> [<span class="arg">market</span>]
+  (<span class="kw">->></span> market
+    (stream/consume!)
+    (brick/generate)
+    (signal/detect)
+    (mel/advise)
+    (execute/decide!)))</code></pre>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <div class="trader-container">
-    <!-- Sidebar with docs navigation -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- LAYER 1: The Stream — Pulsar                                   -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="lt-layer" id="stream">
+    <div class="container">
+      <div class="lt-layer__header">
+        <span class="lt-layer__number">01</span>
+        <div class="section-tag" data-pt="O Fluxo" data-en="The Stream">O Fluxo</div>
+        <h2 class="section-title"
+            data-pt="Pulsar: Streams imutáveis na velocidade do mercado"
+            data-en="Pulsar: Immutable streams at market speed">
+          Pulsar: Streams imutáveis na velocidade do mercado
+        </h2>
+      </div>
+      <div class="lt-layer__grid">
+        <div class="lt-layer__text">
+          <p data-pt="O mercado não espera. Cada milissegundo carrega informação que morre se não for capturada. Nosso fs-worker é a fonte única de verdade — um processo dedicado que se conecta diretamente às exchanges via WebSocket, consome cada tick, cada book update, cada trade, e os persiste em streams Pulsar imutáveis."
+             data-en="The market doesn't wait. Every millisecond carries information that dies if not captured. Our fs-worker is the single source of truth — a dedicated process that connects directly to exchanges via WebSocket, consumes every tick, every book update, every trade, and persists them into immutable Pulsar streams.">
+            O mercado não espera. Cada milissegundo carrega informação que morre se não for capturada. Nosso fs-worker é a fonte única de verdade — um processo dedicado que se conecta diretamente às exchanges via WebSocket, consome cada tick, cada book update, cada trade, e os persiste em streams Pulsar imutáveis.
+          </p>
+          <p data-pt="Nenhum dado é descartado. Nenhum estado é sobrescrito. O stream é o log. O log é a verdade. O sistema inteiro — do backtest à produção — consome dos mesmos fatos, na mesma ordem, com a mesma semântica."
+             data-en="No data is discarded. No state is overwritten. The stream is the log. The log is truth. The entire system — from backtest to production — consumes the same facts, in the same order, with the same semantics.">
+            Nenhum dado é descartado. Nenhum estado é sobrescrito. O stream é o log. O log é a verdade. O sistema inteiro — do backtest à produção — consome dos mesmos fatos, na mesma ordem, com a mesma semântica.
+          </p>
+        </div>
+        <div class="lt-layer__code">
+          <div class="code-block">
+            <div class="code-block__dots"><span></span><span></span><span></span></div>
+<pre><code><span class="comment">;; fs-worker: single source of truth</span>
+<span class="comment">;; exchange → websocket → pulsar topic</span>
+
+<span class="kw">deribit/BTC-PERPETUAL</span>
+  → ws://deribit.com/ws/api/v2
+    → pulsar://persistent/market/<span class="fn">btc-perp-ticks</span>
+      → <span class="arg">consumer-group: backtest</span>
+      → <span class="arg">consumer-group: paper</span>
+      → <span class="arg">consumer-group: production</span>
+
+<span class="comment">;; same data. same order. every time.</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- LAYER 2: The Memory — Datomic + Fulcro                        -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="lt-layer lt-layer--alt" id="memory">
+    <div class="container">
+      <div class="lt-layer__header">
+        <span class="lt-layer__number">02</span>
+        <div class="section-tag" data-pt="A Memória" data-en="The Memory">A Memória</div>
+        <h2 class="section-title"
+            data-pt="Datomic + Fulcro: Onde CRUD morre e dados vivem para sempre"
+            data-en="Datomic + Fulcro: Where CRUD dies and data lives forever">
+          Datomic + Fulcro: Onde CRUD morre e dados vivem para sempre
+        </h2>
+      </div>
+      <div class="lt-layer__grid lt-layer__grid--reverse">
+        <div class="lt-layer__code">
+          <div class="code-block">
+            <div class="code-block__dots"><span></span><span></span><span></span></div>
+<pre><code><span class="comment">;; Datomic: open schema, accretion-only</span>
+<span class="comment">;; add attributes whenever you need them</span>
+(<span class="kw">d/transact</span> conn
+  [{<span class="arg">:db/ident</span>       <span class="fn">:trade/conviction</span>
+    <span class="arg">:db/valueType</span>   :db.type/double
+    <span class="arg">:db/cardinality</span> :db.cardinality/one}])
+
+<span class="comment">;; no migrations. no downtime. just grow.</span>
+
+<span class="comment">;; Fulcro: the UI is the query</span>
+(<span class="kw">defsc</span> <span class="fn">Trade</span> [this props]
+  {<span class="arg">:query</span> [:trade/id :trade/side
+          :trade/entry-price
+          :trade/conviction]  <span class="comment">; ← just added</span>
+   <span class="arg">:ident</span> :trade/id}
+  <span class="comment">;; UI auto-normalizes. No reducers.</span>
+  <span class="comment">;; No action creators. No boilerplate.</span>
+  (render-trade props))</code></pre>
+          </div>
+        </div>
+        <div class="lt-layer__text">
+          <p data-pt="Datomic não é um banco de dados. É uma linha do tempo. Cada fato tem um timestamp. Cada schema é aditivo — nunca destrutivo. Precisa de um novo atributo? Transacione. Sem migrations, sem downtime, sem medo. O schema cresce com o sistema, não contra ele."
+             data-en="Datomic is not a database. It is a timeline. Every fact has a timestamp. Every schema is additive — never destructive. Need a new attribute? Transact it. No migrations, no downtime, no fear. The schema grows with the system, not against it.">
+            Datomic não é um banco de dados. É uma linha do tempo. Cada fato tem um timestamp. Cada schema é aditivo — nunca destrutivo. Precisa de um novo atributo? Transacione. Sem migrations, sem downtime, sem medo. O schema cresce com o sistema, não contra ele.
+          </p>
+          <p data-pt="Fulcro fecha o circuito: o componente UI declara os dados que precisa como uma query EQL. O Pathom resolve. O estado se normaliza automaticamente. Não existe reducer, não existe action creator, não existe boilerplate. Você declara o que quer ver — o framework entrega."
+             data-en="Fulcro closes the loop: the UI component declares the data it needs as an EQL query. Pathom resolves it. State normalizes automatically. There are no reducers, no action creators, no boilerplate. You declare what you want to see — the framework delivers.">
+            Fulcro fecha o circuito: o componente UI declara os dados que precisa como uma query EQL. O Pathom resolve. O estado se normaliza automaticamente. Não existe reducer, não existe action creator, não existe boilerplate. Você declara o que quer ver — o framework entrega.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- LAYER 3: The Engine — Execution                                -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="lt-layer" id="engine">
+    <div class="container">
+      <div class="lt-layer__header">
+        <span class="lt-layer__number">03</span>
+        <div class="section-tag" data-pt="O Motor" data-en="The Engine">O Motor</div>
+        <h2 class="section-title"
+            data-pt="Motor de execução portado: Do backtest ao mercado vivo"
+            data-en="Ported execution engine: From backtest to live market">
+          Motor de execução portado: Do backtest ao mercado vivo
+        </h2>
+      </div>
+      <div class="lt-layer__grid">
+        <div class="lt-layer__text">
+          <p data-pt="O mesmo motor que roda contra dois anos de dados históricos em segundos é o mesmo motor que executa ordens reais no Deribit. Não há duas implementações. Não há 'modo simulação' separado do 'modo produção'. Existe um pipeline de dados, uma cadeia de interceptores, uma lógica de decisão."
+             data-en="The same engine that runs against two years of historical data in seconds is the same engine that executes real orders on Deribit. There are not two implementations. There is no 'simulation mode' separate from 'production mode'. There is one data pipeline, one interceptor chain, one decision logic.">
+            O mesmo motor que roda contra dois anos de dados históricos em segundos é o mesmo motor que executa ordens reais no Deribit. Não há duas implementações. Não há 'modo simulação' separado do 'modo produção'. Existe um pipeline de dados, uma cadeia de interceptores, uma lógica de decisão.
+          </p>
+          <p data-pt="Bricks Renko transformam caos de preço em estrutura. Clara Rules detecta padrões como fatos lógicos. O motor decide — entrar, sair, ajustar stop, escalar posição — tudo como composição de funções puras sobre dados imutáveis."
+             data-en="Renko bricks transform price chaos into structure. Clara Rules detects patterns as logical facts. The engine decides — enter, exit, adjust stop, scale position — all as composition of pure functions over immutable data.">
+            Bricks Renko transformam caos de preço em estrutura. Clara Rules detecta padrões como fatos lógicos. O motor decide — entrar, sair, ajustar stop, escalar posição — tudo como composição de funções puras sobre dados imutáveis.
+          </p>
+        </div>
+        <div class="lt-layer__code">
+          <div class="code-block">
+            <div class="code-block__dots"><span></span><span></span><span></span></div>
+<pre><code><span class="comment">;; one engine. three modes. zero drift.</span>
+
+(<span class="kw">def</span> <span class="fn">execution-modes</span>
+  {<span class="arg">:backtest</span>   {<span class="arg">:source</span>  pulsar/historical
+               <span class="arg">:sink</span>    datomic/sim-trades}
+   <span class="arg">:paper</span>      {<span class="arg">:source</span>  pulsar/live-stream
+               <span class="arg">:sink</span>    datomic/paper-trades}
+   <span class="arg">:production</span> {<span class="arg">:source</span>  pulsar/live-stream
+               <span class="arg">:sink</span>    deribit/real-orders}})
+
+<span class="comment">;; Clara Rules: patterns as logic</span>
+(<span class="kw">defrule</span> <span class="fn">double-brick-reversal</span>
+  [Brick (= direction <span class="arg">+1</span>) (= idx ?i)]
+  [Brick (= direction <span class="arg">+1</span>) (= idx (inc ?i))]
+  [Brick (= direction <span class="arg">-1</span>) (= idx (+ ?i 2))]
+  =>
+  (insert! (->Signal <span class="arg">:long</span> <span class="arg">:double-brick</span>)))</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- LAYER 4: The Mind — Mel                                        -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="lt-layer lt-layer--alt" id="mel">
+    <div class="container">
+      <div class="lt-layer__header">
+        <span class="lt-layer__number">04</span>
+        <div class="section-tag" data-pt="A Mente" data-en="The Mind">A Mente</div>
+        <h2 class="section-title"
+            data-pt="Mel: A assistente local que nunca esquece"
+            data-en="Mel: The local assistant that never forgets">
+          Mel: A assistente local que nunca esquece
+        </h2>
+      </div>
+      <div class="lt-layer__grid lt-layer__grid--reverse">
+        <div class="lt-layer__code">
+          <div class="code-block">
+            <div class="code-block__dots"><span></span><span></span><span></span></div>
+<pre><code><span class="comment">;; Mel runs in-browser via Cherry runtime</span>
+<span class="comment">;; she sees what you see. knows what the</span>
+<span class="comment">;; system knows. advises from the data.</span>
+
+<span class="fn">mel&gt;</span> "BTC dropped 3 bricks in 20 min.
+      Your trailing stop saved 1.2% on the
+      last trade. Similar pattern 47 times
+      in backtest — 68% reversal within
+      5 bricks. Want me to tighten the
+      stop or let the thesis play out?"
+
+<span class="comment">;; not a chatbot. a copilot.</span>
+<span class="comment">;; grounded in YOUR data.</span>
+<span class="comment">;; running on YOUR machine.</span></code></pre>
+          </div>
+        </div>
+        <div class="lt-layer__text">
+          <p data-pt="Mel não é um chatbot genérico. Ela é uma assistente local que roda no navegador via Cherry runtime, com acesso total aos dados do sistema — trades, sinais, bricks, métricas de backtest, posições abertas. Ela não alucina. Ela consulta."
+             data-en="Mel is not a generic chatbot. She is a local assistant running in-browser via Cherry runtime, with full access to system data — trades, signals, bricks, backtest metrics, open positions. She doesn't hallucinate. She queries.">
+            Mel não é um chatbot genérico. Ela é uma assistente local que roda no navegador via Cherry runtime, com acesso total aos dados do sistema — trades, sinais, bricks, métricas de backtest, posições abertas. Ela não alucina. Ela consulta.
+          </p>
+          <p data-pt="Quando Mel diz que um padrão apareceu 47 vezes no backtest com 68% de reversão, é porque ela acabou de rodar a query contra o Datomic. Quando sugere apertar o stop, é porque analisou a volatilidade atual contra o ATR histórico. Ela é a ponte entre a intuição do trader e a memória perfeita da máquina."
+             data-en="When Mel says a pattern appeared 47 times in backtest with 68% reversal, it's because she just ran the query against Datomic. When she suggests tightening the stop, it's because she analyzed current volatility against historical ATR. She is the bridge between trader intuition and the machine's perfect memory.">
+            Quando Mel diz que um padrão apareceu 47 vezes no backtest com 68% de reversão, é porque ela acabou de rodar a query contra o Datomic. Quando sugere apertar o stop, é porque analisou a volatilidade atual contra o ATR histórico. Ela é a ponte entre a intuição do trader e a memória perfeita da máquina.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- LAYER 5: The Playbook Levels                                   -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="lt-layer" id="playbooks">
+    <div class="container">
+      <div class="lt-layer__header">
+        <span class="lt-layer__number">05</span>
+        <div class="section-tag" data-pt="Os Playbooks" data-en="The Playbooks">Os Playbooks</div>
+        <h2 class="section-title"
+            data-pt="Do crossover ao neural: Estratégia como espectro"
+            data-en="From crossover to neural: Strategy as a spectrum">
+          Do crossover ao neural: Estratégia como espectro
+        </h2>
+      </div>
+      <div class="lt-playbooks">
+        <div class="lt-playbook" data-level="1">
+          <div class="lt-playbook__level">
+            <span data-pt="Nível" data-en="Level">Nível</span> 1</div>
+          <h3 data-pt="Crossovers & Indicadores" data-en="Crossovers & Indicators">Crossovers & Indicadores</h3>
+          <p data-pt="Médias móveis, DEMA, RSI. As ferramentas clássicas. Simples, auditáveis, ponto de entrada para qualquer trader. O sistema não julga — executa."
+             data-en="Moving averages, DEMA, RSI. The classic tools. Simple, auditable, entry point for any trader. The system doesn't judge — it executes.">
+            Médias móveis, DEMA, RSI. As ferramentas clássicas. Simples, auditáveis, ponto de entrada para qualquer trader. O sistema não julga — executa.
+          </p>
+        </div>
+        <div class="lt-playbook" data-level="2">
+          <div class="lt-playbook__level">
+            <span data-pt="Nível" data-en="Level">Nível</span> 2</div>
+          <h3 data-pt="Renko Bricks & Padrões" data-en="Renko Bricks & Patterns">Renko Bricks & Padrões</h3>
+          <p data-pt="Renko filtra o ruído. Cada brick é uma decisão do mercado. Single-brick, double-brick, multi-brick — padrões detectados por Clara Rules como fatos lógicos, não heurísticas frágeis."
+             data-en="Renko filters the noise. Each brick is a market decision. Single-brick, double-brick, multi-brick — patterns detected by Clara Rules as logical facts, not fragile heuristics.">
+            Renko filtra o ruído. Cada brick é uma decisão do mercado. Single-brick, double-brick, multi-brick — padrões detectados por Clara Rules como fatos lógicos, não heurísticas frágeis.
+          </p>
+        </div>
+        <div class="lt-playbook" data-level="3">
+          <div class="lt-playbook__level">
+            <span data-pt="Nível" data-en="Level">Nível</span> 3</div>
+          <h3 data-pt="Convexidade & Volatilidade" data-en="Convexity & Volatility">Convexidade & Volatilidade</h3>
+          <p data-pt="Estratégia de convexidade: perder pouco muitas vezes, ganhar muito poucas vezes. Regime de volatilidade via ATR percentile, posicionamento dinâmico, trailing stops adaptativos. O edge não está na previsão — está na assimetria."
+             data-en="Convexity strategy: lose small many times, win big few times. Volatility regime via ATR percentile, dynamic positioning, adaptive trailing stops. The edge isn't in prediction — it's in asymmetry.">
+            Estratégia de convexidade: perder pouco muitas vezes, ganhar muito poucas vezes. Regime de volatilidade via ATR percentile, posicionamento dinâmico, trailing stops adaptativos. O edge não está na previsão — está na assimetria.
+          </p>
+        </div>
+        <div class="lt-playbook" data-level="4">
+          <div class="lt-playbook__level">
+            <span data-pt="Nível" data-en="Level">Nível</span> 4</div>
+          <h3 data-pt="Opções & Estruturas" data-en="Options & Structures">Opções & Estruturas</h3>
+          <p data-pt="Venda de volatilidade em cripto com Deribit. Near-expiry, spreads, gestão de gregas. O mesmo motor, os mesmos dados, um instrumento diferente para capturar o prêmio do tempo."
+             data-en="Volatility selling in crypto with Deribit. Near-expiry, spreads, greeks management. Same engine, same data, a different instrument to capture the time premium.">
+            Venda de volatilidade em cripto com Deribit. Near-expiry, spreads, gestão de gregas. O mesmo motor, os mesmos dados, um instrumento diferente para capturar o prêmio do tempo.
+          </p>
+        </div>
+        <div class="lt-playbook lt-playbook--frontier" data-level="5">
+          <div class="lt-playbook__level">
+            <span data-pt="Nível" data-en="Level">Nível</span> 5</div>
+          <h3 data-pt="Quant NN & LLM Advisory" data-en="Quant NN & LLM Advisory">Quant NN & LLM Advisory</h3>
+          <p data-pt="Redes neurais treinadas em features extraídas dos bricks. LLM advisory ponderado por confiança. Não para substituir o trader — para dar a ele uma memória de 100.000 trades e um instinto calibrado por dados."
+             data-en="Neural networks trained on features extracted from bricks. LLM advisory weighted by confidence. Not to replace the trader — to give them a memory of 100,000 trades and an instinct calibrated by data.">
+            Redes neurais treinadas em features extraídas dos bricks. LLM advisory ponderado por confiança. Não para substituir o trader — para dar a ele uma memória de 100.000 trades e um instinto calibrado por dados.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- LAYER 6: The Architecture Summary                              -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="lt-layer lt-layer--alt" id="architecture">
+    <div class="container">
+      <div class="lt-layer__header">
+        <span class="lt-layer__number">06</span>
+        <div class="section-tag" data-pt="A Arquitetura" data-en="The Architecture">A Arquitetura</div>
+        <h2 class="section-title"
+            data-pt="Um sistema, não uma coleção de ferramentas"
+            data-en="A system, not a collection of tools">
+          Um sistema, não uma coleção de ferramentas
+        </h2>
+      </div>
+      <div class="lt-arch-flow">
+        <div class="lt-arch-node">
+          <div class="lt-arch-node__icon">🌊</div>
+          <h4>Deribit WS</h4>
+          <p data-pt="Tick data" data-en="Tick data">Tick data</p>
+        </div>
+        <div class="lt-arch-arrow">→</div>
+        <div class="lt-arch-node">
+          <div class="lt-arch-node__icon">⚡</div>
+          <h4>fs-worker</h4>
+          <p data-pt="Captura & persiste" data-en="Capture & persist">Captura & persiste</p>
+        </div>
+        <div class="lt-arch-arrow">→</div>
+        <div class="lt-arch-node">
+          <div class="lt-arch-node__icon">📡</div>
+          <h4>Pulsar</h4>
+          <p data-pt="Streams imutáveis" data-en="Immutable streams">Streams imutáveis</p>
+        </div>
+        <div class="lt-arch-arrow">→</div>
+        <div class="lt-arch-node">
+          <div class="lt-arch-node__icon">🧱</div>
+          <h4>Renko + Clara</h4>
+          <p data-pt="Bricks & sinais" data-en="Bricks & signals">Bricks & sinais</p>
+        </div>
+        <div class="lt-arch-arrow">→</div>
+        <div class="lt-arch-node">
+          <div class="lt-arch-node__icon">🧠</div>
+          <h4>Mel + Engine</h4>
+          <p data-pt="Decisão & execução" data-en="Decision & execution">Decisão & execução</p>
+        </div>
+        <div class="lt-arch-arrow">→</div>
+        <div class="lt-arch-node">
+          <div class="lt-arch-node__icon">💎</div>
+          <h4>Datomic</h4>
+          <p data-pt="Memória eterna" data-en="Eternal memory">Memória eterna</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- DOCUMENTATION (v0.01 docs viewer, nested below)                -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="lt-docs-section" id="docs">
+    <div class="container">
+      <div class="lt-layer__header">
+        <div class="section-tag" data-pt="Documentação Completa" data-en="Full Documentation">Documentação Completa</div>
+        <h2 class="section-title"
+            data-pt="Leia o código. Entenda a decisão."
+            data-en="Read the code. Understand the decision.">
+          Leia o código. Entenda a decisão.
+        </h2>
+        <p class="lt-docs-section__sub"
+           data-pt="Toda a documentação técnica, guias de arquitetura e materiais de aprendizado."
+           data-en="All technical documentation, architecture guides, and learning materials.">
+          Toda a documentação técnica, guias de arquitetura e materiais de aprendizado.
+        </p>
+        <a href="https://github.com/4coders-com-br/little-trader-docs-and-learn" class="btn btn--outline" target="_blank" rel="noopener"
+           data-pt="📂 Repositório no GitHub" data-en="📂 Repository on GitHub">📂 Repositório no GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Docs Viewer -->
+  <div class="trader-container" id="docsViewer">
     <aside class="trader-sidebar">
       <div class="trader-sidebar__header">
-        <h2 data-pt="Documentação" data-en="Documentation">Documentação</h2>
+        <h2 data-pt="Navegação" data-en="Navigation">Navegação</h2>
       </div>
-      <div class="trader-sidebar__categories" id="docsCategories">
-        <!-- Populated by JavaScript -->
-      </div>
+      <div class="trader-sidebar__categories" id="docsCategories"></div>
     </aside>
-
-    <!-- Main docs viewer -->
     <main class="trader-docs">
       <div class="trader-docs__content" id="docsContent">
         <div class="trader-docs__placeholder">
@@ -83,10 +437,12 @@
         <p data-pt="Engenharia de Software." data-en="Software engineering.">Engenharia de Software.</p>
       </div>
       <div class="footer__links">
-        <a href="index.html#about" data-pt="Sobre" data-en="About">Sobre</a>
-        <a href="index.html#stack" data-pt="Stack" data-en="Stack">Stack</a>
-        <a href="trader.html" data-pt="Little Trader" data-en="Little Trader">Little Trader</a>
-        <a href="index.html#contact" data-pt="Contato" data-en="Contact">Contato</a>
+        <a href="index.html" data-pt="Home" data-en="Home">Home</a>
+        <a href="#stream" data-pt="Stream" data-en="Stream">Stream</a>
+        <a href="#engine" data-pt="Motor" data-en="Engine">Motor</a>
+        <a href="#mel" data-pt="Mel" data-en="Mel">Mel</a>
+        <a href="#docs" data-pt="Docs" data-en="Docs">Docs</a>
+        <a href="https://github.com/4coders-com-br/little-trader-docs-and-learn" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </footer>

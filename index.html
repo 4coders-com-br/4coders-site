@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 </head>
 <body>
@@ -22,8 +22,8 @@
       <div class="nav__links" id="navLinks">
         <a href="#about" data-pt="Sobre" data-en="About">Sobre</a>
         <a href="#stack" data-pt="Stack" data-en="Stack">Stack</a>
-        <a href="#bootcamp" data-pt="Bootcamp" data-en="Bootcamp">Bootcamp</a>
-        <a href="trader.html" data-pt="Little Trader" data-en="Little Trader">📈 Little Trader</a>
+        <a href="#products" data-pt="Produtos" data-en="Products">Produtos</a>
+        <a href="trader.html" data-pt="Little Trader" data-en="Little Trader">Little Trader</a>
         <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
         <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
       </div>
@@ -120,6 +120,66 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- Products: Little Trader showcase                               -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="programs" id="products">
+    <div class="container">
+      <div class="section-tag" data-pt="Produtos" data-en="Products">Produtos</div>
+      <h2 class="section-title" data-pt="O que construímos" data-en="What we build">O que construímos</h2>
+      <div class="programs__grid">
+
+        <a href="trader.html" class="program-card program-card--featured" style="text-decoration:none;">
+          <div class="program-card__badge" data-pt="Produto principal" data-en="Flagship product">Produto principal</div>
+          <div class="program-card__title" data-pt="Little Trader" data-en="Little Trader">Little Trader</div>
+          <div class="program-card__desc"
+               data-pt="Sistema de trading funcional onde dados imutáveis encontram o caos do mercado. Streams Pulsar, banco Datomic, motor de execução portado do backtest à produção, e Mel — uma assistente local de IA que nunca esquece."
+               data-en="A functional trading system where immutable data meets market chaos. Pulsar streams, Datomic database, execution engine ported from backtest to production, and Mel — a local AI assistant that never forgets.">
+            Sistema de trading funcional onde dados imutáveis encontram o caos do mercado. Streams Pulsar, banco Datomic, motor de execução portado do backtest à produção, e Mel — uma assistente local de IA que nunca esquece.
+          </div>
+          <ul class="program-card__features">
+            <li data-pt="Streams imutáveis Pulsar — mesmos dados do backtest à produção" data-en="Immutable Pulsar streams — same data from backtest to production">Streams imutáveis Pulsar — mesmos dados do backtest à produção</li>
+            <li data-pt="Datomic + Fulcro: schema aditivo, zero boilerplate CRUD" data-en="Datomic + Fulcro: additive schema, zero CRUD boilerplate">Datomic + Fulcro: schema aditivo, zero boilerplate CRUD</li>
+            <li data-pt="Clara Rules: padrões Renko como fatos lógicos" data-en="Clara Rules: Renko patterns as logical facts">Clara Rules: padrões Renko como fatos lógicos</li>
+            <li data-pt="Mel: IA local com acesso total aos dados do sistema" data-en="Mel: local AI with full access to system data">Mel: IA local com acesso total aos dados do sistema</li>
+            <li data-pt="5 níveis de playbook: de crossovers a redes neurais quant" data-en="5 playbook levels: from crossovers to quant neural networks">5 níveis de playbook: de crossovers a redes neurais quant</li>
+          </ul>
+        </a>
+
+        <div class="program-card">
+          <div class="program-card__badge" data-pt="Em desenvolvimento" data-en="In development">Em desenvolvimento</div>
+          <div class="program-card__title" data-pt="Little Family" data-en="Little Family">Little Family</div>
+          <div class="program-card__desc"
+               data-pt="Plataforma de produtos da família Little — compartilhando infraestrutura, auth, e padrões de desenvolvimento entre diferentes domínios de negócio."
+               data-en="The Little Family product platform — sharing infrastructure, auth, and development patterns across different business domains.">
+            Plataforma de produtos da família Little — compartilhando infraestrutura, auth, e padrões de desenvolvimento entre diferentes domínios de negócio.
+          </div>
+          <ul class="program-card__features">
+            <li data-pt="Infraestrutura compartilhada" data-en="Shared infrastructure">Infraestrutura compartilhada</li>
+            <li data-pt="Auth unificado entre produtos" data-en="Unified auth across products">Auth unificado entre produtos</li>
+            <li data-pt="Padrões de desenvolvimento consistentes" data-en="Consistent development patterns">Padrões de desenvolvimento consistentes</li>
+          </ul>
+        </div>
+
+        <div class="program-card">
+          <div class="program-card__badge" data-pt="Educação" data-en="Education">Educação</div>
+          <div class="program-card__title" data-pt="Learn Platform" data-en="Learn Platform">Learn Platform</div>
+          <div class="program-card__desc"
+               data-pt="Plataforma de aprendizado integrada ao sistema de trading. Do REPL-first ao modelagem quant — aprenda construindo sobre dados reais."
+               data-en="Learning platform integrated with the trading system. From REPL-first to quant modeling — learn by building on real data.">
+            Plataforma de aprendizado integrada ao sistema de trading. Do REPL-first ao modelagem quant — aprenda construindo sobre dados reais.
+          </div>
+          <ul class="program-card__features">
+            <li data-pt="Currículo de Clojure e trading" data-en="Clojure and trading curriculum">Currículo de Clojure e trading</li>
+            <li data-pt="Cherry REPL no navegador" data-en="Cherry REPL in browser">Cherry REPL no navegador</li>
+            <li data-pt="Dados reais, não simulações" data-en="Real data, not simulations">Dados reais, não simulações</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Bootcamp -->
   <section class="bootcamp" id="bootcamp">
     <div class="container bootcamp__inner">
@@ -165,8 +225,8 @@
       <div class="footer__links">
         <a href="#about" data-pt="Sobre" data-en="About">Sobre</a>
         <a href="#stack" data-pt="Stack" data-en="Stack">Stack</a>
-        <a href="#bootcamp" data-pt="Bootcamp" data-en="Bootcamp">Bootcamp</a>
-        <a href="trader.html" data-pt="Little Trader" data-en="Little Trader">📈 Little Trader</a>
+        <a href="#products" data-pt="Produtos" data-en="Products">Produtos</a>
+        <a href="trader.html" data-pt="Little Trader" data-en="Little Trader">Little Trader</a>
         <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
       </div>
     </div>

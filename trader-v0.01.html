@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Trader — Trading System | 4coders</title>
+  <meta name="description" content="Little Trader: An advanced trading system built with Clojure, Fulcro, and Datomic. Full documentation and learning resources.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/trader.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="logo-4">4</span><span class="logo-coders">coders</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="index.html#about" data-pt="Sobre" data-en="About">Sobre</a>
+        <a href="index.html#stack" data-pt="Stack" data-en="Stack">Stack</a>
+        <a href="trader.html" class="nav-link--active" data-pt="Little Trader" data-en="Little Trader">
+          📈 Little Trader
+        </a>
+        <a href="index.html#contact" data-pt="Contato" data-en="Contact">Contato</a>
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="trader-hero">
+    <div class="container trader-hero__inner">
+      <div class="trader-hero__content">
+        <p class="trader-hero__tag" data-pt="Sistema de Trading Avançado" data-en="Advanced Trading System">Sistema de Trading Avançado</p>
+        <h1 class="trader-hero__title" data-pt="Little Trader" data-en="Little Trader">📈 Little Trader</h1>
+        <p class="trader-hero__desc" data-pt="Um sistema de trading completo construído com Clojure, Fulcro e Datomic. Suporta análise de padrões Renko, execução em tempo real e backtesting em larga escala." data-en="A complete trading system built with Clojure, Fulcro, and Datomic. Supports Renko pattern analysis, real-time execution, and large-scale backtesting.">Um sistema de trading completo construído com Clojure, Fulcro e Datomic. Suporta análise de padrões Renko, execução em tempo real e backtesting em larga escala.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="trader-container">
+    <!-- Sidebar with docs navigation -->
+    <aside class="trader-sidebar">
+      <div class="trader-sidebar__header">
+        <h2 data-pt="Documentação" data-en="Documentation">Documentação</h2>
+      </div>
+      <div class="trader-sidebar__categories" id="docsCategories">
+        <!-- Populated by JavaScript -->
+      </div>
+    </aside>
+
+    <!-- Main docs viewer -->
+    <main class="trader-docs">
+      <div class="trader-docs__content" id="docsContent">
+        <div class="trader-docs__placeholder">
+          <div class="trader-docs__empty-state">
+            <p data-pt="Selecione um documento na barra lateral" data-en="Select a document from the sidebar">Selecione um documento na barra lateral</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="nav__logo">
+          <span class="logo-4">4</span><span class="logo-coders">coders</span>
+        </a>
+        <p data-pt="Engenharia de Software." data-en="Software engineering.">Engenharia de Software.</p>
+      </div>
+      <div class="footer__links">
+        <a href="index.html#about" data-pt="Sobre" data-en="About">Sobre</a>
+        <a href="index.html#stack" data-pt="Stack" data-en="Stack">Stack</a>
+        <a href="trader.html" data-pt="Little Trader" data-en="Little Trader">Little Trader</a>
+        <a href="index.html#contact" data-pt="Contato" data-en="Contact">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/trader-docs.js"></script>
+</body>
+</html>
