@@ -7,7 +7,7 @@ const DOC_CATEGORIES = [
     labelEn: 'Getting Started',
     docs: [
       { file: 'README.md', titlePt: 'README', titleEn: 'README' },
-      { file: 'FEATURES.md', titlePt: 'Funcionalidades', titleEn: 'Features' }
+      { file: 'IMPLEMENTATION.md', titlePt: 'Guia de Implementação', titleEn: 'Implementation Guide' }
     ]
   },
   {
@@ -17,7 +17,8 @@ const DOC_CATEGORIES = [
     docs: [
       { file: 'ARCHITECTURE.md', titlePt: 'Arquitetura Geral', titleEn: 'Architecture' },
       { file: 'AUTH_ARCHITECTURE.md', titlePt: 'Arquitetura de Autenticação', titleEn: 'Auth Architecture' },
-      { file: 'FRONTEND.md', titlePt: 'Frontend', titleEn: 'Frontend' }
+      { file: 'FRONTEND.md', titlePt: 'Frontend', titleEn: 'Frontend' },
+      { file: 'C4_ARCHITECTURE.md', titlePt: 'Diagrama C4', titleEn: 'C4 Diagram' }
     ]
   },
   {
@@ -26,7 +27,8 @@ const DOC_CATEGORIES = [
     labelEn: 'Strategy & Research',
     docs: [
       { file: 'QUANTITATIVE_ML.md', titlePt: 'ML Quantitativo', titleEn: 'Quantitative ML' },
-      { file: 'RESEARCH_AI_TRADING_PAPERS.md', titlePt: 'Pesquisa em Trading com IA', titleEn: 'AI Trading Research' }
+      { file: 'RESEARCH_AI_TRADING_PAPERS.md', titlePt: 'Pesquisa em Trading com IA', titleEn: 'AI Trading Research' },
+      { file: 'STRATEGY_EXECUTION_ENGINE.md', titlePt: 'Motor de Execução de Estratégia', titleEn: 'Strategy Execution Engine' }
     ]
   },
   {
@@ -34,9 +36,9 @@ const DOC_CATEGORIES = [
     labelPt: 'Implementação',
     labelEn: 'Implementation',
     docs: [
-      { file: 'IMPLEMENTATION.md', titlePt: 'Guia de Implementação', titleEn: 'Implementation Guide' },
       { file: 'IMPLEMENTATION_STATUS.md', titlePt: 'Status', titleEn: 'Status' },
-      { file: 'PROJECT_STATUS.md', titlePt: 'Status do Projeto', titleEn: 'Project Status' }
+      { file: 'PROJECT_STATUS.md', titlePt: 'Status do Projeto', titleEn: 'Project Status' },
+      { file: 'EXECUTOR_PLATFORM.md', titlePt: 'Plataforma Executor', titleEn: 'Executor Platform' }
     ]
   },
   {
@@ -45,7 +47,9 @@ const DOC_CATEGORIES = [
     labelEn: 'DevOps & Infrastructure',
     docs: [
       { file: 'DEVOPS.md', titlePt: 'DevOps', titleEn: 'DevOps' },
-      { file: 'CLOUD_MCP_STAGING.md', titlePt: 'Cloud MCP Staging', titleEn: 'Cloud MCP Staging' }
+      { file: 'CLOUD_MCP_STAGING.md', titlePt: 'Cloud MCP Staging', titleEn: 'Cloud MCP Staging' },
+      { file: 'CLOUD_DEPLOY.md', titlePt: 'Cloud Deploy', titleEn: 'Cloud Deploy' },
+      { file: 'SRE_OPERATIONS.md', titlePt: 'Operações SRE', titleEn: 'SRE Operations' }
     ]
   },
   {
@@ -53,9 +57,21 @@ const DOC_CATEGORIES = [
     labelPt: 'Desenvolvimento',
     labelEn: 'Development',
     docs: [
+      { file: 'CLAUDE.md', titlePt: 'Guia Claude AI', titleEn: 'Claude AI Guide' },
       { file: 'MCP_DEVELOPMENT.md', titlePt: 'Desenvolvimento MCP', titleEn: 'MCP Development' },
       { file: 'AI_LLM_INTEGRATION.md', titlePt: 'Integração com IA/LLM', titleEn: 'AI/LLM Integration' },
       { file: 'TESTING.md', titlePt: 'Testes', titleEn: 'Testing' }
+    ]
+  },
+  {
+    id: 'learning',
+    labelPt: 'Aprendizado',
+    labelEn: 'Learning',
+    docs: [
+      { file: 'COURSE.md', titlePt: 'Visão Geral do Curso', titleEn: 'Course Overview' },
+      { file: 'COURSE_CURRICULUM.md', titlePt: 'Currículo', titleEn: 'Curriculum' },
+      { file: 'DEVELOPER_ONBOARDING_PLAYBOOK.md', titlePt: 'Guia de Onboarding', titleEn: 'Onboarding Guide' },
+      { file: 'OPTIONS_STRATEGIES_101.md', titlePt: 'Estratégias de Opções 101', titleEn: 'Options Strategies 101' }
     ]
   }
 ];
@@ -132,22 +148,12 @@ function initDocsPdfViewer() {
     contentArea.innerHTML = '<div class="trader-docs__loading"></div>';
     
     try {
-      // Try to fetch from the little-trader docs directory
-      const docUrl = `../little-trader/docs/${filename}`;
+      // Fetch from local docs directory
+      const docUrl = `docs/${filename}`;
       const response = await fetch(docUrl);
       
       if (!response.ok) {
-        // If docs/ path fails, try root (for README, FEATURES, etc)
-        const rootUrl = `../little-trader/${filename}`;
-        const rootResponse = await fetch(rootUrl);
-        
-        if (!rootResponse.ok) {
-          throw new Error('Document not found');
-        }
-        
-        const content = await rootResponse.text();
-        renderDocument(title, content);
-        return;
+        throw new Error(`HTTP ${response.status}`);
       }
       
       const content = await response.text();
@@ -156,8 +162,9 @@ function initDocsPdfViewer() {
       contentArea.innerHTML = `
         <div class="trader-docs__placeholder">
           <div class="trader-docs__empty-state">
-            <p>Erro ao carregar documento / Error loading document</p>
-            <p style="font-size: 14px; margin-top: 8px; color: var(--color-text-muted);">${error.message}</p>
+            <p>❌ Error loading document</p>
+            <p style="font-size: 13px; margin-top: 8px; color: var(--color-text-muted);">File: <code>${filename}</code></p>
+            <p style="font-size: 13px; color: var(--color-text-muted);">${error.message}</p>
           </div>
         </div>
       `;
@@ -172,7 +179,11 @@ function initDocsPdfViewer() {
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlContent;
     tempDiv.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightElement(block);
+      try {
+        hljs.highlightElement(block);
+      } catch (e) {
+        // Silently ignore highlighting errors
+      }
     });
     
     contentArea.innerHTML = `
